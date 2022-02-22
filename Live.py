@@ -1,3 +1,6 @@
+from GuessGame import guess_game
+from MemoryGame import memory_game
+
 # Define Welcome function with your name variable
 def welcome(user_name=str):
     print("Enter your name:")
@@ -15,10 +18,10 @@ def load_game(game_opt=int):
           "\n2. Guess Game - guess a number and see if you chose like the computer"
           "\n3. Currency Roulette - try and guess the value of a random amount of USD in IL")
     print("\nplease choose game from 1 to 3:")
-    game_opt = input()
-    if 4 > int(game_opt) > 0:
+    game_opt = int(input())
+    if 4 > game_opt > 0:
         print(game_opt)
-        return
+        return game_opt
     else:
         print("Wrong choice as ", game_opt, " is not a supported option to choose, exiting program!")
         exit(0)
@@ -30,8 +33,8 @@ def load_game(game_opt=int):
 
 def game_level(diff_level=int):
     print("Please choose game difficulty from 1 to 5:")
-    diff_level = input()
-    if 6 > int(diff_level) > 0:
+    diff_level = int(input())
+    if 6 > diff_level > 0:
         print(diff_level)
         return diff_level
     else:
@@ -39,3 +42,10 @@ def game_level(diff_level=int):
         exit(0)
 
 # game_level()
+
+def play_game(game, diff):
+    if game == 1:
+        memory_game(diff)
+    elif game == 2:
+        guess_game(diff)
+

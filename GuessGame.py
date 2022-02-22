@@ -2,17 +2,9 @@
 from random import randrange
 
 
-def guess_game(game_guess_state=None, gen_num=0, game_diff_level=0):
-    import random
-    print("\nPlease choose a game Difficulty level greater than zero:")
-    game_diff_level = input()
-
-    # Validate that input value for Game Difficulty Level is larger than "1"
-    if int(game_diff_level) <= 1:
-        print("Wrong choice as ", game_diff_level, " is not a supported option to choose, exiting program!")
-        exit(0)
-    else:
-        print("you selected valid Game Difficulty level =", game_diff_level)
+def guess_game(game_diff_level):
+    game_guess_state = None
+    gen_num = 0
     # Generate Random number from Game Difficulty level variable
     gen_num = randrange(1, int(game_diff_level), 1)
     print(gen_num)
